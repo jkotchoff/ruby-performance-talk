@@ -20,3 +20,9 @@ heroku run rails db:migrate
 heroku run rails db:seed
 heroku open stocks
 ```
+
+Profile base application profile
+
+```bash
+bundle exec derailed bundle:mem
+```
