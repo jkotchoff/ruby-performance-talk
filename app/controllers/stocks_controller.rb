@@ -3,7 +3,11 @@ class StocksController < ApplicationController
 
   # GET /stocks or /stocks.json
   def index
-    @stocks = Stock.all
+    if params[:codes]
+      @stocks = Stock.where(code: params[:codes].split(","))
+    else
+      @stocks = Stock.all
+    end
   end
 
   # GET /stocks/1 or /stocks/1.json
