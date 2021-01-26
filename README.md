@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+```ruby
+bundle exec rails g scaffold stocks code:string name:string price:float exchange_id:integer
+bundle exec rails g scaffold exchanges code:string name:string
+bundle exec rails db:migrate
+bundle exec rails db:seed
+```
