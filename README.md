@@ -1,31 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create the project locally:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-```ruby
+```bash
+bundle exec rails db:setup
 bundle exec rails g scaffold stocks code:string name:string price:float exchange_id:integer
 bundle exec rails g scaffold exchanges code:string name:string
 bundle exec rails db:migrate
 bundle exec rails db:seed
+bundle exec rails server -p 5001
+```
+
+Deploy to heroku:
+
+```bash
+heroku create ruby-performance-talk
+git push heroku master
+heroku run rails db:migrate
+heroku run rails db:seed
+heroku open stocks
 ```
